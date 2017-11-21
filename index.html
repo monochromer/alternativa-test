@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Game UI</title>
+</head>
+<body>
+
+    <!-- BEGIN svg-defs -->
+    <svg class="svg-defs">
+        <defs>
+            <linearGradient id="flare-grad" x1="0" y1="0" x2="0" y2="100%">
+                <stop offset="0%" stop-opacity="0.35" stop-color="#fff"></stop>
+                <stop offset="100%" stop-opacity="0.0" stop-color="#fff"></stop>
+            </linearGradient>
+            <mask id="flare-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                <rect x="0" y="0" width="1" height="1" fill="#fff"></rect>
+                <rect x="0" y="0.4" width="1" height="0.5" fill="#000" rx="0.2" ry="0.3"></rect>
+                <rect x="0" y="0.65" width="1" height="1"></rect>
+            </mask>
+        </defs>
+
+        <symbol id="flare-symbol">
+            <rect width="100%" height="100%" mask="url('#flare-mask')" fill="url(#flare-grad)"></rect>
+        </symbol>
+    </svg>
+    <!-- END svg-defs -->
+
+    <!-- BEGIN panel -->
+    <div class="panel">
+        <!-- BEGIN toolbar -->
+        <div class="toolbar">
+            <svg width="0" height="0" class="toolbar__flare">
+                <use xlink:href="#flare-symbol"></use>
+            </svg>
+            <!--
+                point_command_a - красный цвет
+                point_command_b - синий цвет
+            -->
+            <span class="point point_command_a">
+                <svg id="A" class="point-chart" width="100%" height="100%" viewBox="0 0 32 32">
+                    <circle class="point-chart__sector"
+                        cx="16" cy="16" r="16" stroke-width="32"
+                        stroke-dasharray="100 100"
+                        stroke-dashoffset="0"
+                        fill="none"
+                        stroke="#541300"
+                    ></circle>
+                </svg>
+                <span class="point__text">A</span>
+            </span>
+            <span class="point point_command_b">
+                <svg id="B" class="point-chart" width="100%" height="100%" viewBox="0 0 32 32">
+                    <circle class="point-chart__sector"
+                            cx="16" cy="16" r="16" stroke-width="32"
+                            stroke-dasharray="100 100"
+                            stroke-dashoffset="0"
+                            fill="none"
+                            stroke="#541300"
+                    ></circle>
+                </svg>
+                <span class="point__text">B</span>
+            </span>
+            <span class="point point_command_b">
+                <svg id="C" class="point-chart" width="100%" height="100%" viewBox="0 0 32 32">
+                    <circle class="point-chart__sector"
+                            cx="16" cy="16" r="16" stroke-width="32"
+                            stroke-dasharray="100 100"
+                            stroke-dashoffset="0"
+                            fill="none"
+                            stroke="#541300"
+                    ></circle>
+                </svg>
+                <span class="point__text">C</span>
+            </span>
+            <span class="point point_command_a">
+                <svg id="D" class="point-chart" width="100%" height="100%" viewBox="0 0 32 32">
+                    <circle class="point-chart__sector"
+                            cx="16" cy="16" r="16" stroke-width="32"
+                            stroke-dasharray="100 100"
+                            stroke-dashoffset="0"
+                            fill="none"
+                            stroke="#541300"
+                    ></circle>
+                </svg>
+                <span class="point__text">D</span>
+            </span>
+            <span class="point point_command_a">
+                <svg id="E" class="point-chart" width="100%" height="100%" viewBox="0 0 32 32">
+                    <circle class="point-chart__sector"
+                            cx="16" cy="16" r="16" stroke-width="32"
+                            stroke-dasharray="100 100"
+                            stroke-dashoffset="0"
+                            fill="none"
+                            stroke="#541300"
+                    ></circle>
+                </svg>
+                <span class="point__text">E</span>
+            </span>
+        </div>
+        <!-- END toolbar -->
+
+        <!-- BEGIN toolbar -->
+        <div class="toolbar">
+            <svg width="0" height="0" class="toolbar__flare">
+                <use xlink:href="#flare-symbol"></use>
+            </svg>
+            <!-- BEGIN stat-bar -->
+            <div class="stat-bar">
+                <div class="stat-info">
+                    <div class="stat-info__icon fund"></div>
+                    <div class="stat-info__text">
+                    Фонд битвы: 11
+                    <span class="stat-info__icon stat-info__icon_unit crystal"></span>
+                </div>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-info__icon points-small"></div>
+                    <div class="stat-info__text">100</div>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-info__icon time-limit "></div>
+                    <div class="stat-info__text">14:14</div>
+                </div>
+            </div>
+            <!-- END stat-bar -->
+        </div>
+        <!-- END toolbar -->
+
+       <!-- BEGIN toolbar -->
+       <div class="toolbar">
+           <svg width="0" height="0" class="toolbar__flare">
+               <use xlink:href="#flare-symbol"></use>
+           </svg>
+           <div class="score">
+               <div class="score__team score__team_a">
+                   <span class="score__text">326</span>
+               </div>
+               <div class="score__team score__team_b">
+                   <span class="score__text">24</span>
+               </div>
+           </div>
+       </div>
+       <!-- END toolbar -->
+    </div>
+    <!-- END panel -->
+
+    <!-- BEGIN control-form -->
+    <form class="control-form" name="control-form">
+        <h4>Значения для диаграмм</h4>
+        <label>
+            <span>A</span>
+            <input name="A" value="100" type="text">
+        </label>
+
+        <label>
+            <span>B</span>
+            <input name="B" value="100" type="text">
+        </label>
+
+        <label>
+            <span>C</span>
+            <input name="C" value="100" type="text">
+        </label>
+
+        <label>
+            <span>D</span>
+            <input name="D" value="100" type="text">
+        </label>
+
+        <label>
+            <span>E</span>
+            <input name="E" value="100" type="text">
+        </label>
+
+        <button type="submit">Задать значения</button>
+    </form>
+    <!-- END control-form -->
+
+    <script src="js/utils.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
