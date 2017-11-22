@@ -20,7 +20,7 @@
 
     function setValues() {
         Object.keys(dataStore).forEach(function(id) {
-            ChartStore[id].setValue(dataStore[id]);
+            ChartStore[id].value = dataStore[id];
         })
     }
 
